@@ -1,0 +1,65 @@
+{
+  "schema": {
+    "all": {
+      "product-price": {
+        "html": "<div class=\"price price--on-sale\">\n  <div class=\"price__container\">\n    <div class=\"price__regular\">\n      <span class=\"visually-hidden visually-hidden--inline\">Regular price</span>\n      <span class=\"price-item price-item--regular\">\n        {{ original_price }}\n      </span>\n    </div>\n    <div class=\"price__sale\">\n        <span class=\"visually-hidden visually-hidden--inline\">Regular price</span>\n        <span>\n          <s class=\"price-item price-item--regular\">\n            {{ original_price }}\n          </s>\n        </span>\n      <span class=\"visually-hidden visually-hidden--inline\">Sale price</span>\n      <span class=\"price-item price-item--sale price-item--last\">\n        {{ final_price }}\n      </span>\n    </div>\n  </div>\n</div>\n",
+        "type": "product",
+        "selector": "#MainContent .price:not(.price--end)"
+      },
+      "cart-drawer-subtotal": {
+        "html": "<div class=\"cart-drawer__footer\">\n  <div class=\"totals\" role=\"status\">\n    <h2 class=\"totals__subtotal\">Subtotal</h2>\n    <p class=\"totals__subtotal-value\">{{ subtotal_price }}</p>\n  </div>\n  <div>\n    <ul class=\"discounts list-unstyled\" role=\"list\" aria-label=\"Discount\">\n      <li class=\"discounts__discount discounts__discount--end\">\n        <svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-discount color-foreground-text\" viewBox=\"0 0 12 12\">\n          <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n            d=\"M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z\"\n            fill=\"currentColor\">\n          </path>\n        </svg>\n        {{ code }}\n        (-{{ total_discount }})\n      </li>\n    </ul>\n  </div>\n  <small class=\"tax-note caption-large rte\">Taxes and shipping calculated at checkout</small>\n</div>\n",
+        "type": "cart",
+        "selector": "#CartDrawer .cart-drawer__footer"
+      },
+      "cart-drawer-items-code": {
+        "html": "<ul class=\"discounts list-unstyled\" role=\"list\" aria-label=\"Discount\"><li class=\"discounts__discount\"><svg aria-hidden=\"true\" focusable=\"false\" class=\"icon icon-discount color-foreground-text\" viewBox=\"0 0 12 12\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z\" fill=\"currentColor\"></path></svg>{{ code }}</li></ul>",
+        "item": "#CartDrawer .cart-item",
+        "type": "cart-item",
+        "selector": ".cart-item__details .discounts"
+      },
+      "cart-drawer-items-price": {
+        "html": "<div class=\"product-option\">\n  <span class=\"visually-hidden\">\n    Regular price\n  </span>\n  <s class=\"cart-item__old-price product-option\">{{ original_price }}</s>\n  <span class=\"visually-hidden\">\n    Sale price\n  </span>\n  <strong class=\"cart-item__final-price product-option\">\n    {{ final_price }}\n  </strong>\n</div>\n",
+        "item": "#CartDrawer .cart-item",
+        "type": "cart-item",
+        "selector": ".cart-item__details div.product-option"
+      },
+      "cart-drawer-items-line-price": {
+        "html": "<div class=\"cart-item__price-wrapper\">\n  <span class=\"visually-hidden\">\n    Regular price\n  </span>\n  <s class=\"cart-item__old-price price price--end\">\n    {{ original_line_price }}\n  </s>\n  <span class=\"visually-hidden\">\n    Sale price\n  </span>\n  <span class=\"price price--end\">\n    {{ final_line_price }}\n  </span>\n</div>",
+        "item": "#CartDrawer .cart-item",
+        "type": "cart-item",
+        "selector": ".cart-item__totals .cart-item__price-wrapper"
+      }
+    },
+    "cart": {
+      "cart-subtotal": {
+        "html": "<div class=\"js-contents\">\n  <div class=\"totals\">\n    <h2 class=\"totals__subtotal\">Subtotal</h2>\n    <p class=\"totals__subtotal-value\">{{ subtotal_price }}</p>\n  </div>\n\n  <div>\n    <ul class=\"discounts list-unstyled\" role=\"list\" aria-label=\"Discount\">\n      <li class=\"discounts__discount discounts__discount--position\"><svg aria-hidden=\"true\" focusable=\"false\"\n          class=\"icon icon-discount color-foreground-text\" viewBox=\"0 0 12 12\">\n          <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n            d=\"M7 0h3a2 2 0 012 2v3a1 1 0 01-.3.7l-6 6a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4l6-6A1 1 0 017 0zm2 2a1 1 0 102 0 1 1 0 00-2 0z\"\n            fill=\"currentColor\">\n          </path>\n        </svg>\n        {{ code }}\n        (-{{ total_discount }})\n      </li>\n    </ul>\n  </div>\n  <small class=\"tax-note caption-large rte\">Taxes and shipping calculated at checkout\n  </small>\n</div>\n",
+        "type": "cart",
+        "selector": ".cart__footer .js-contents"
+      },
+      "cart-items-price": {
+        "html": "<div class=\"product-option\">\n  <span class=\"visually-hidden\">\n    Regular price\n  </span>\n  <s class=\"cart-item__old-price product-option\">{{ original_price }}</s>\n  <span class=\"visually-hidden\">\n    Sale price\n  </span>\n  <strong class=\"cart-item__final-price product-option\">\n    {{ final_price }}\n  </strong>\n</div>\n",
+        "item": "#cart .cart-item",
+        "type": "cart-item",
+        "selector": "div.product-option"
+      },
+      "cart-items-line-price": {
+        "html": "<td class=\"cart-item__totals right small-hide\"><div class=\"loading-overlay hidden\"><div class=\"loading-overlay__spinner\"><svg aria-hidden=\"true\" focusable=\"false\" class=\"spinner\" viewBox=\"0 0 66 66\" xmlns=\"http://www.w3.org/2000/svg\"><circle class=\"path\" fill=\"none\" stroke-width=\"6\" cx=\"33\" cy=\"33\" r=\"30\"></circle></svg></div></div><div class=\"cart-item__price-wrapper\"><dl class=\"cart-item__discounted-prices\"><dt class=\"visually-hidden\">Regular price</dt><dd><s class=\"cart-item__old-price price price--end\">{{ original_line_price }}</s></dd><dt class=\"visually-hidden\">Sale price</dt><dd class=\"price price--end\">{{ final_line_price }}</dd></dl></div></td>",
+        "item": "#cart .cart-item",
+        "type": "cart-item",
+        "selector": ".cart-item__totals.small-hide"
+      }
+    },
+    "product": {
+      "other-prices": {
+        "html": "<div class=\"price price--on-sale\">\n  <div class=\"price__container\">\n    <div class=\"price__regular\">\n      <span class=\"visually-hidden visually-hidden--inline\">Regular price</span>\n      <span class=\"price-item price-item--regular\">\n        {{ original_price }}\n      </span>\n    </div>\n    <div class=\"price__sale\">\n        <span class=\"visually-hidden visually-hidden--inline\">Regular price</span>\n        <span>\n          <s class=\"price-item price-item--regular\">\n            {{ original_price }}\n          </s>\n        </span>\n      <span class=\"visually-hidden visually-hidden--inline\">Sale price</span>\n      <span class=\"price-item price-item--sale price-item--last\">\n        {{ final_price }}\n      </span>\n    </div>\n  </div>\n</div>\n",
+        "type": "product",
+        "selector": "#MainContent .price:not(.price--large)"
+      },
+      "product-price": {
+        "html": "<div class=\"price price--large price--on-sale\">\n  <div class=\"price__container\">\n    <div class=\"price__regular\">\n      <span class=\"visually-hidden visually-hidden--inline\">Regular price</span>\n      <span class=\"price-item price-item--regular\">\n        {{ selected_variant.original_price }}\n      </span>\n    </div>\n    <div class=\"price__sale\">\n        <span class=\"visually-hidden visually-hidden--inline\">Regular price</span>\n        <span>\n          <s class=\"price-item price-item--regular\">\n            {{ selected_variant.original_price }}\n          </s>\n        </span>\n      <span class=\"visually-hidden visually-hidden--inline\">Sale price</span>\n      <span class=\"price-item price-item--sale price-item--last\">\n        {{ selected_variant.final_price }}\n      </span>\n    </div>\n  </div>\n</div>\n",
+        "type": "product",
+        "selector": "#MainContent .price.price--large"
+      }
+    }
+  }
+}

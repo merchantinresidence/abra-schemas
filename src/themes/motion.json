@@ -1,0 +1,55 @@
+{
+  "schema": {
+    "all": {
+      "grid-product-price": {
+        "html": "<div class=\"grid-product__price\">\n  <span class=\"visually-hidden\">Regular price</span>\n  <span class=\"grid-product__price--original\">{{ original_price }}</span>\n  <span class=\"visually-hidden\">Sale price</span>\n  <span class=\"sale-price\">{{ final_price }}</span>\n  </div>",
+        "type": "product",
+        "selector": ".grid-product__price"
+      },
+      "product-tags": {
+        "html": "<div class=\"grid-product__tag grid-product__tag--sale\">Save {{ total_discount }}</div>",
+        "type": "product",
+        "selector": ".grid-product__tag"
+      },
+      "block-product-price": {
+        "html": "<div class=\"product-block product-block--price\">\n  <span data-a11y-price class=\"visually-hidden\" aria-hidden=\"false\">Regular price</span>\n  <span data-product-price-wrap>\n    <span data-compare-price class=\"product__price product__price--compare\">{{ selected_variant.original_price }}</span>\n  </span>\n  <span data-compare-price-a11y class=\"visually-hidden\">Sale price</span>\n  <span data-product-price class=\"product__price sale-price\">{{ selected_variant.final_price }}</span>\n</div>",
+        "type": "product",
+        "selector": ".product-block--price"
+      },
+      "cart-drawer-item": {
+        "item": "#CartDrawer .cart__item",
+        "type": "cart-item",
+        "html": "<div class=\"cart__item--price cart__item-price-col text-right\">\n  <span class=\"visually-hidden\">Regular price</span>\n  <small class=\"cart__price cart__price--strikethrough\">{{ original_price }}</small>\n  <span class=\"visually-hidden\">Sale price</span>\n  <span class=\"cart__price cart__discount\">{{ final_price }}</span>\n  <small class=\"cart__discount\">{{ code }} (-{{ total_discount }})</small>\n</div>",
+        "selector": ".cart__item-price-col"
+      },
+      "cart-drawer-savings": {
+        "type": "cart",
+        "html": "<div class=\"cart__item-row cart__savings text-center\">You're saving {{ total_discount }}</div>",
+        "selector": "#CartDrawer .cart__savings"
+      },
+      "cart-drawer": {
+        "type": "cart",
+        "html": "<div class=\"cart__item-sub cart__item-row\">\n  <div class=\"cart__subtotal\">Subtotal</div>\n  <div data-subtotal=\"\">{{ subtotal_price }}</div>\n</div>",
+        "selector": "#CartDrawer .cart__item-sub"
+      }
+    },
+    "cart": {
+      "cart-item": {
+        "item": "#CartPageForm .cart__item",
+        "type": "cart-item",
+        "html": "<div class=\"cart__item--price cart__item-price-col text-right\">\n  <span class=\"visually-hidden\">Regular price</span>\n  <small class=\"cart__price cart__price--strikethrough\">{{ original_price }}</small>\n  <span class=\"visually-hidden\">Sale price</span>\n  <span class=\"cart__price cart__discount\">{{ final_price }}</span>\n  <small class=\"cart__discount\">{{ code }} (-{{ total_discount }})</small>\n</div>",
+        "selector": ".cart__item-price-col"
+      },
+      "cart-savings": {
+        "type": "cart",
+        "html": "<div class=\"cart__item-row cart__savings text-center\">You're saving {{ total_discount }}</div>",
+        "selector": "#CartPageForm .cart__savings"
+      },
+      "cart": {
+        "type": "cart",
+        "html": "<div class=\"cart__item-sub cart__item-row\">\n  <div class=\"cart__subtotal\">Subtotal</div>\n  <div data-subtotal=\"\">{{ subtotal_price }}</div>\n</div>",
+        "selector": "#CartPageForm .cart__item-sub"
+      }
+    }
+  }
+}
