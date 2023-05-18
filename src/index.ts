@@ -14,7 +14,17 @@ export {
   StreamlineSchema,
 };
 
-export function getSchemaByThemeStoreId(id: number | string) {
+export interface Schema {
+  schema: {
+    [template: string]: {
+      [blockId: string]: object;
+    };
+  };
+}
+
+export function getSchemaByThemeStoreId(
+  id: number | string
+): Schema | undefined {
   switch (id.toString()) {
     case '847': {
       return MotionSchema;
@@ -34,8 +44,7 @@ export function getSchemaByThemeStoreId(id: number | string) {
     case '1949': {
       return FetchSchema;
     }
-    default: {
-      throw new Error('Theme not supported');
-    }
+    default:
+      return undefined;
   }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -13,11 +13,9 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test",
+    "test": "jest",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "prepare": "tsdx build"
   },
   "peerDependencies": {},
   "husky": {
@@ -32,7 +30,7 @@
     "trailingComma": "es5"
   },
   "name": "abra-schemas",
-  "author": "Ryan Macdonald",
+  "author": "Merchant In Residence",
   "module": "dist/abra-schemas.esm.js",
   "size-limit": [
     {
@@ -45,9 +43,10 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "8.2.4",
+    "@types/jest": "29.5.1",
     "husky": "8.0.3",
-    "size-limit": "8.2.4",
+    "jest": "29.5.0",
+    "ts-jest": "29.1.0",
     "tsdx": "0.14.1",
     "tslib": "2.5.1",
     "typescript": "5.0.4"
