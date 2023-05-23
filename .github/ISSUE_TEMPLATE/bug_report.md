@@ -3,7 +3,7 @@ name: Bug report
 about: Create a report to help us improve our integrations with themes
 title: ''
 labels: bug
-assignees: macdonaldr93
+assignees: ''
 
 ---
 
