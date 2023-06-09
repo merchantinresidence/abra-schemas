@@ -13,3 +13,8 @@ export interface Schema {
     };
 }
 export declare function getSchemaByThemeStoreId(id: number | string): Schema | undefined;
+export interface ThemeMeta {
+    author: string;
+    name: string;
+}
+export declare function getThemeMetaByThemeStoreId(id: number | string): ThemeMeta | undefined;

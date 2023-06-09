@@ -354,6 +354,54 @@ function getSchemaByThemeStoreId(id) {
       return undefined;
   }
 }
+function getThemeMetaByThemeStoreId(id) {
+  switch (id.toString()) {
+    case '847':
+      {
+        return {
+          author: 'Archetype Themes',
+          name: 'Motion'
+        };
+      }
+    case '857':
+      {
+        return {
+          author: 'Archetype Themes',
+          name: 'Impulse'
+        };
+      }
+    case '872':
+      {
+        return {
+          author: 'Archetype Themes',
+          name: 'Streamline'
+        };
+      }
+    case '887':
+      {
+        return {
+          author: 'Shopify',
+          name: 'Dawn'
+        };
+      }
+    case '902':
+      {
+        return {
+          author: 'Archetype Themes',
+          name: 'Expanse'
+        };
+      }
+    case '1949':
+      {
+        return {
+          author: 'Archetype Themes',
+          name: 'Fetch'
+        };
+      }
+    default:
+      return undefined;
+  }
+}
 
-export { DawnSchema, ExpanseSchema, FetchSchema, ImpulseSchema, MotionSchema, StreamlineSchema, getSchemaByThemeStoreId };
+export { DawnSchema, ExpanseSchema, FetchSchema, ImpulseSchema, MotionSchema, StreamlineSchema, getSchemaByThemeStoreId, getThemeMetaByThemeStoreId };
 //# sourceMappingURL=abra-schemas.esm.js.map
