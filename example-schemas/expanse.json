@@ -1,0 +1,34 @@
+{
+  "schema": {
+    "all": {
+      "collection-product-price": {
+        "html": "<div class=\"grid-product__price\"><span class=\"grid-product__price--current\"><span aria-hidden=\"true\" class=\"grid-product__price--from\">{{ selected_variant.final_price }}</span><span class=\"visually-hidden\">{{ selected_variant.final_price }}</span></span><span class=\"visually-hidden\">Regular price</span><span class=\"grid-product__price--original\"><span aria-hidden=\"true\">{{ selected_variant.compare_at_price }}</span><span class=\"visually-hidden\">{{ selected_variant.compare_at_price }}</span></span><span class=\"grid-product__price--savings\">Save {{ selected_variant.total_discount_dollar }}</span></div>",
+        "type": "product",
+        "selector": ".grid-product .grid-product__price",
+        "container": ".grid-product"
+      },
+      "collection-product-badges": {
+        "html": "<div class=\"grid-product__tags\"><div class=\"grid-product__tag grid-product__tag--sale\">Sale</div></div>",
+        "type": "product",
+        "selector": ".grid-product .grid-product__tags",
+        "container": ".grid-product"
+      },
+      "quickview-product-price": {
+        "html": "<div class=\"block-price__container\" data-on-sale><div class=\"block-price__sale product__price\"><span class=\"visually-hidden\">Regular price</span><span><s><span aria-hidden=\"true\">{{ selected_variant.compare_at_price }}</span><span class=\"visually-hidden\">{{ selected_variant.compare_at_price }}</span></s></span><span class=\"visually-hidden\">Sale price</span><span class=\"product__price\"><span aria-hidden=\"true\">{{ selected_variant.final_price }}</span><span class=\"visually-hidden\">{{ selected_variant.final_price }}</span></span></div><span class=\"block-price__save product__price-savings on-sale\">Save {{ selected_variant.total_discount_dollar }}</span></div>",
+        "type": "product",
+        "selector": ".quick-shop-modal .product-single__meta .block-price .block-price__container",
+        "onevent": {
+          "quickview:loaded": "quickview:loaded",
+          "variant:change": "variant:change"
+        }
+      }
+    },
+    "product": {
+      "product-price": {
+        "html": "<div class=\"block-price__container\" data-on-sale><div class=\"block-price__sale product__price\"><span class=\"visually-hidden\">Regular price</span><span><s><span aria-hidden=\"true\">{{ selected_variant.compare_at_price }}</span><span class=\"visually-hidden\">{{ selected_variant.compare_at_price }}</span></s></span><span class=\"visually-hidden\">Sale price</span><span class=\"product__price\"><span aria-hidden=\"true\">{{ selected_variant.final_price }}</span><span class=\"visually-hidden\">{{ selected_variant.final_price }}</span></span></div><span class=\"block-price__save product__price-savings on-sale\">Save {{ selected_variant.total_discount_dollar }}</span></div>",
+        "type": "product",
+        "selector": ".product-single__meta .block-price .block-price__container"
+      }
+    }
+  }
+}

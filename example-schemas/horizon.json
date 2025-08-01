@@ -1,0 +1,33 @@
+{
+  "schema": {
+    "all": {
+      "sale-badge": {
+        "html": "<div class=\"product-badges__badge badge__onsale badge__soldout product-badges__badge--rectangle color-scheme-4\" data-compare-at-price=\"{{ selected_variant.compare_at_price }}\">Sale</div>",
+        "type": "product",
+        "selector": ".product-card .product-badges .product-badges__badge.badge__onsale",
+        "container": ".product-card"
+      },
+      "quick-add-price": {
+        "html": "<div ref=\"priceContainer\"><span role=\"group\"><span class=\"price\">{{ selected_variant.final_price }} {{ currency.iso_code }}</span></span>&nbsp;<span role=\"group\"><span class=\"compare-at-price\">{{ selected_variant.compare_at_price }} {{ currency.iso_code }}</span></span></div>",
+        "type": "product",
+        "onevent": "variant:update",
+        "selector": ".quick-add-modal .quick-add-modal__content [ref='priceContainer']",
+        "container": ".quick-add-modal"
+      },
+      "product-card-price": {
+        "html": "<div ref=\"priceContainer\"><span role=\"group\"><span class=\"price\">{{ selected_variant.final_price }} {{ currency.iso_code }}</span></span>&nbsp;<span role=\"group\"><span class=\"compare-at-price\">{{ selected_variant.compare_at_price }} {{ currency.iso_code }}</span></span></div>",
+        "type": "product",
+        "selector": ".product-card [ref='priceContainer']",
+        "container": ".product-card"
+      }
+    },
+    "product": {
+      "main-product-price": {
+        "html": "<div ref=\"priceContainer\"><span role=\"group\"><span class=\"visually-hidden\">Sale price&nbsp;</span><span class=\"price\">{{ selected_variant.final_price }}</span></span>&nbsp;<span role=\"group\"><span class=\"visually-hidden\">Regular price&nbsp;</span><span class=\"compare-at-price\">{{ selected_variant.compare_at_price }}</span></span></div>",
+        "type": "product",
+        "onevent": "variant:update",
+        "selector": ".product-information [ref='priceContainer']"
+      }
+    }
+  }
+}

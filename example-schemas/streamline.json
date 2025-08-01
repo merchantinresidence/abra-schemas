@@ -1,0 +1,25 @@
+{
+  "schema": {
+    "all": {
+      "collection-product-price": {
+        "html": "<div class=\"grid-product__price\"><span class=\"visually-hidden\">Regular price</span><del class=\"grid-product__price--original\">{{ selected_variant.compare_at_price }}</del><span class=\"visually-hidden\">Sale price</span><span class=\"sale-price\">{{ selected_variant.final_price }}</span></div>",
+        "type": "product",
+        "selector": ".grid-product .grid-product__price",
+        "container": ".grid-product"
+      },
+      "collection-product-badges": {
+        "html": "<div class=\"grid-product__tag grid-product__tag--sale\" data-compare-at-price=\"{{ selected_variant.compare_at_price }}\">Save {{ selected_variant.total_discount_percentage }}</div>",
+        "type": "product",
+        "selector": ".grid-product .grid-product__tag",
+        "container": ".grid-product"
+      }
+    },
+    "product": {
+      "product-price": {
+        "html": "<div class=\"product-block product-block--price small--text-center\"><div class=\"product-single__prices\"><span class=\"visually-hidden\" aria-hidden=\"false\" data-price-a11y>Regular price</span><span class data-price-wrapper><span class=\"product__price product__price--compare\" data-product-price-compare>{{ selected_variant.compare_at_price }}</span></span><span class=\"visually-hidden\" data-compare-a11y>Sale price</span><span class=\"product__price sale-price\" data-product-price>{{ selected_variant.final_price }}</span></div></div>",
+        "type": "product",
+        "selector": ".product-single__meta .product-block--price"
+      }
+    }
+  }
+}

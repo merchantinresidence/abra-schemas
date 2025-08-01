@@ -1,0 +1,19 @@
+{
+  "schema": {
+    "all": {
+      "collection-product-price": {
+        "html": "<div class=\"price price--on-sale\"><div class=\"price__container\"><div class=\"price__sale\"><span class=\"visually-hidden visually-hidden--inline\">Regular price</span><span><s class=\"price-item price-item--regular\">{{ selected_variant.compare_at_price }}</s></span><span class=\"visually-hidden visually-hidden--inline\">Sale price</span><span class=\"price-item price-item--sale price-item--last\">{{ selected_variant.final_price }}</span></div></div></div>",
+        "type": "product",
+        "selector": ".product-grid .grid__item .price",
+        "container": ".product-grid .grid__item"
+      }
+    },
+    "product": {
+      "product-price": {
+        "html": "<div class=\"price price--large price--on-sale\"><div class=\"price__container\"><div class=\"price__sale\"><span class=\"visually-hidden visually-hidden--inline\">Regular price</span><span><s class=\"price-item price-item--regular\">{{ selected_variant.compare_at_price }}</s></span><span class=\"visually-hidden visually-hidden--inline\">Sale price</span><span class=\"price-item price-item--sale price-item--last\">{{ selected_variant.final_price }}</span></div></div></div>",
+        "type": "product",
+        "selector": ".product .price"
+      }
+    }
+  }
+}
